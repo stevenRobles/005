@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Ejercicios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu-item {
+            margin: 10px 0;
+        }
+        .exercise {
+            display: none;
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .exercise.active {
+            display: block;
+        }
+        .exercise h2 {
+            color: #007bff;
+        }
+        .exercise p {
+            color: #555;
+        }
+        input[type="number"],
+        input[type="text"],
+        button {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Menú de Ejercicios</h1>
+    </div>
+    <div class="menu">
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio1')">1) Convertir Celsius a Fahrenheit</div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio2')">2) Obtener el doble y el triple de un número</div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio3')">3) leer 4 variables y calcule su producto </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio4')">4) leer peso de un hombre y transformarlo </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio5')">5) resolver la siguiente expresion </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio6')">6) calcular valor del sueldo de un empleado </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio7')">7) presentar el mayor de dos numeros </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio8')">8) leer un caracter </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio9')">9) determinar cuanto se debe pagar </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio10')">10) promocion de almacen </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio11')">11) dado un dia en numero , presentar </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio12')">12) dado un mes en numero , presentar </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio13')">13) dado 5 nombres </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio14')">14) dado una direccion cualquiera </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio15')">14) almacenar 5 valores aleatorios </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio16')">16) arreglo vacio </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio17')">17) dada una cadena presentar el primer caracter </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio18')">18) dada una cadena presentar el ultimo caracter </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio19')">19) dada una cadena presentar </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio20')">20) dada una cadena presentar el caracter de en medio  </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio21')">21) dado dos caracteres </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio22')">22) dado dos nombres </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio23')">23) dado una cadena indicar </div>
+        <div class="menu-item" onclick="mostrarEjercicio('ejercicio24')">24) dado un arreglo indicar </div>
+        <!-- Agrega aquí más elementos de menú si es necesario -->
+    </div>
+    
+    <!-- Ejercicio 1: Convertir Celsius a Fahrenheit -->
+    <div class="exercise" id="ejercicio1">
+        <h2>Convertir Celsius a Fahrenheit</h2>
+        <label for="celsius">Grados Celsius:</label>
+        <input type="number" id="celsius" name="celsius">
+        <button onclick="convertirCelsiusAFahrenheit()">Convertir</button>
+        <p id="resultado1"></p>
+    </div>
+    
+    <!-- Ejercicio 2: Obtener el doble y el triple de un número -->
+    <div class="exercise" id="ejercicio2">
+        <h2>Obtener el doble y el triple de un número</h2>
+        <label for="numero">Ingrese un número entero:</label>
+        <input type="number" id="numero" name="numero">
+        <button onclick="obtenerDobleYTriple()">Calcular</button>
+        <p id="resultado2"></p>
+    </div>
+    
+    
+    <div class="exercise" id="ejercicio3">
+        <h2>Calcular producto, suma y media aritmética de 4 números</h2>
+        <label for="num1">Número 1:</label>
+        <input type="number" id="num1" name="num1">
+        <label for="num2">Número 2:</label>
+        <input type="number" id="num2" name="num2">
+        <label for="num3">Número 3:</label>
+        <input type="number" id="num3" name="num3">
+        <label for="num4">Número 4:</label>
+        <input type="number" id="num4" name="num4">
+        <button onclick="calcularOperaciones()">Calcular</button>
+        <p id="resultado3"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio4">
+        <h2>Convertir peso de libras a kilogramos y gramos</h2>
+        <label for="pesoLbs">Peso en libras:</label>
+        <input type="number" id="pesoLbs" name="pesoLbs">
+        <button onclick="convertirPeso()">Convertir</button>
+        <p id="resultado4"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio5">
+        <h2>Resolver expresión matemática</h2>
+        <label for="valorA">Valor de a:</label>
+        <input type="number" id="valorA" name="valorA">
+        <label for="valorB">Valor de b:</label>
+        <input type="number" id="valorB" name="valorB">
+        <button onclick="resolverExpresion()">Resolver</button>
+        <p id="resultado5"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio6">
+        <h2>Calcular salario y deducciones de un empleado</h2>
+        <label for="horasTrabajadas">Horas trabajadas:</label>
+        <input type="number" id="horasTrabajadas" name="horasTrabajadas">
+        <button onclick="calcularSueldo()">Calcular</button>
+        <p id="resultado6"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio7">
+        <h2>Presentar el mayor de dos números si uno es par y el otro impar</h2>
+        <label for="numero1">Primer número:</label>
+        <input type="number" id="numero1" name="numero1">
+        <label for="numero2">Segundo número:</label>
+        <input type="number" id="numero2" name="numero2">
+        <button onclick="compararNumeros()">Comparar</button>
+        <p id="resultado7"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio8">
+        <h2>Verificar si un carácter está entre a y z o es un signo de puntuación</h2>
+        <label for="caracter">Ingrese un carácter:</label>
+        <input type="text" id="caracter" name="caracter" maxlength="1">
+        <button onclick="verificarCaracter()">Verificar</button>
+        <p id="resultado8"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio9">
+        <h2>Calcular costo de colas con descuento</h2>
+        <label for="cantidadColas">Cantidad de colas:</label>
+        <input type="number" id="cantidadColas" name="cantidadColas">
+        <button onclick="calcularCostoColas()">Calcular</button>
+        <p id="resultado9"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio10">
+        <h2>Calcular descuentos y pago de trajes con promoción</h2>
+        
+        <button onclick="calcularDescuentos()">Calcular</button>
+        <div id="resultadosDescuentos"></div>
+    </div>
+    
+    <div class="exercise" id="ejercicio11">
+        <h2>Presentar nombre de un día dado su número</h2>
+        <label for="numeroDia">Número de día:</label>
+        <input type="number" id="numeroDia" name="numeroDia" min="1" max="7">
+        <button onclick="obtenerNombreDia()">Obtener nombre</button>
+        <p id="resultado11"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio12">
+        <h2>Presentar nombre de un mes dado su número</h2>
+        <label for="numeroMes">Número de mes:</label>
+        <input type="number" id="numeroMes" name="numeroMes" min="1" max="12">
+        <button onclick="obtenerNombreMes()">Obtener nombre</button>
+        <p id="resultado12"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio13">
+        <h2>Presentar nombres de un arreglo de atrás hacia adelante</h2>
+        
+        <p id="resultado13"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio14">
+        <h2>Presentar primer, medio y último carácter de una dirección</h2>
+        <label for="direccion">Ingrese una dirección:</label>
+        <input type="text" id="direccion" name="direccion">
+        <button onclick="obtenerCaracteresDireccion()">Obtener caracteres</button>
+        <p id="resultado14"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio15">
+        <h2>Presentar primer valor par positivo o último impar negativo de un arreglo</h2>
+        
+        <p id="resultado15"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio16">
+        <h2>Presentar primer y último carácter de nombres de un arreglo</h2>
+        
+        <p id="resultado16"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio17">
+        <h2>Presentar primer carácter si es un dígito</h2>
+        <label for="cadenaDigito">Ingrese una cadena:</label>
+        <input type="text" id="cadenaDigito" name="cadenaDigito">
+        <button onclick="obtenerPrimerDigito()">Obtener carácter</button>
+        <p id="resultado17"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio18">
+        <h2>Presentar último carácter si es una letra</h2>
+        <label for="cadenaLetra">Ingrese una cadena:</label>
+        <input type="text" id="cadenaLetra" name="cadenaLetra">
+        <button onclick="obtenerUltimaLetra()">Obtener carácter</button>
+        <p id="resultado18"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio19">
+        <h2>Presentar primer carácter si es una vocal</h2>
+        <label for="cadenaVocal">Ingrese una cadena:</label>
+        <input type="text" id="cadenaVocal" name="cadenaVocal">
+        <button onclick="obtenerPrimerVocal()">Obtener carácter</button>
+        <p id="resultado19"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio20">
+        <h2>Presentar carácter del medio si es un signo de puntuación</h2>
+        <label for="cadenaPuntuacion">Ingrese una cadena:</label>
+        <input type="text" id="cadenaPuntuacion" name="cadenaPuntuacion">
+        <button onclick="obtenerCaracterPuntuacion()">Obtener carácter</button>
+        <p id="resultado20"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio21">
+        <h2>Comparar dos caracteres</h2>
+        <label for="caracter1">Primer carácter:</label>
+        <input type="text" id="caracter1" name="caracter1" maxlength="1">
+        <label for="caracter2">Segundo carácter:</label>
+        <input type="text" id="caracter2" name="caracter2" maxlength="1">
+        <button onclick="compararCaracteres()">Comparar</button>
+        <p id="resultado21"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio22">
+        <h2>Comparar dos nombres</h2>
+        <label for="nombre1">Primer nombre:</label>
+        <input type="text" id="nombre1" name="nombre1">
+        <label for="nombre2">Segundo nombre:</label>
+        <input type="text" id="nombre2" name="nombre2">
+        <button onclick="compararNombres()">Comparar</button>
+        <p id="resultado22"></p>
+    </div>
+    
+    <div class="exercise" id="ejercicio23">
+        <h2>Contar elementos de una cadena</h2>
+        <label for="cadenaContar">Ingrese una cadena:</label>
+        <input type="text" id="cadenaContar" name="cadenaContar">
+        <button onclick="contarElementosCadena()">Contar elementos</button>
+        <p id="resultado23"></p>
+    </div>
+    
+    
+        <div class="exercise" id="ejercicio24">
+            <h2>Contar elementos de un arreglo</h2>
+            <label for="arregloContar">Ingrese un arreglo:</label>
+            <input type="text" id="arregloContar" name="arregloContar">
+            <button onclick="contarElementosArreglo()">Contar elementos</button>
+            <p id="resultado24"></p>
+        </div>
+   
+    <script>
+        function mostrarEjercicio(id) {
+            // Ocultar todos los ejercicios
+            var ejercicios = document.querySelectorAll('.exercise');
+            ejercicios.forEach(function(ejercicio) {
+                ejercicio.classList.remove('active');
+            });
+
+            // Mostrar el ejercicio seleccionado
+            var ejercicioSeleccionado = document.getElementById(id);
+            ejercicioSeleccionado.classList.add('active');
+        }
+
+        function convertirCelsiusAFahrenheit() {
+            var celsius = parseFloat(document.getElementById("celsius").value);
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("resultado1").innerText = "Fahrenheit: " + fahrenheit.toFixed(2);
+        }
+
+        function obtenerDobleYTriple() {
+            var numero = parseInt(document.getElementById("numero").value);
+            var doble = numero * 2;
+            var triple = numero * 3;
+            document.getElementById("resultado2").innerText = "Doble: " + doble + ", Triple: " + triple;
+        }
+        function calcularProductoSumaMedia() {
+        var numero1 = parseFloat(document.getElementById("numero1").value);
+        var numero2 = parseFloat(document.getElementById("numero2").value);
+        var numero3 = parseFloat(document.getElementById("numero3").value);
+        var numero4 = parseFloat(document.getElementById("numero4").value);
+        var producto = numero1 * numero2 * numero3 * numero4;
+        var suma = numero1 + numero2 + numero3 + numero4;
+        var media = suma / 4;
+        document.getElementById("resultado3").innerText = "Producto: " + producto + ", Suma: " + suma + ", Media: " + media.toFixed(2);
+    }
+    // Ejercicio 4: Convertir peso de libras a kilogramos y gramos
+    function convertirPeso() {
+        var pesoLbs = parseFloat(document.getElementById("pesoLbs").value);
+        var pesoKg = pesoLbs * 0.453592;
+        var pesoG = (pesoKg - Math.floor(pesoKg)) * 1000;
+        document.getElementById("resultado4").innerText = "Peso en kilogramos: " + Math.floor(pesoKg) + ", Peso en gramos: " + pesoG.toFixed(2);
+    }
+
+    // Ejercicio 5: Resolver expresión matemática
+    function resolverExpresion() {
+        var valorA = parseFloat(document.getElementById("valorA").value);
+        var valorB = parseFloat(document.getElementById("valorB").value);
+        var resultado = ((Math.sin(valorA) + Math.cos(valorB)) * (Math.trunc(valorA) % 2)) + (Math.sqrt(Math.pow(valorA, 3)) / (valorA * valorB + valorB));
+        document.getElementById("resultado5").innerText = "Resultado: " + resultado.toFixed(2);
+    }
+
+    // Ejercicio 6: Calcular salario y deducciones de un empleado
+    function calcularSueldo() {
+        var horasTrabajadas = parseFloat(document.getElementById("horasTrabajadas").value)
+        var tarifaNormal = 5
+        var tarifaSobretiempo = tarifaNormal * 2
+        var horasNormales = Math.min(horasTrabajadas, 40)
+        var horasSobretiempo = Math.max(horasTrabajadas - 40, 0)
+        var sueldoNormal = horasNormales * tarifaNormal
+        var sueldoSobretiempo = horasSobretiempo * tarifaSobretiempo
+        var ingresoTotal = sueldoNormal + sueldoSobretiempo
+        var seguroSocial = ingresoTotal * 0.1
+        var netoRecibir = ingresoTotal - seguroSocial
+        document.getElementById("resultado6").innerText = "Sueldo: $" + ingresoTotal.toFixed(2) + ", Sobretiempo: $" + sueldoSobretiempo.toFixed(2) + ", Ingreso Total: $" + ingresoTotal.toFixed(2) + ", Seguro Social: $" + seguroSocial.toFixed(2) + ", Neto a Recibir: $" + netoRecibir.toFixed(2)
+    }
+
+    // Ejercicio 7: Presentar el mayor de dos números si uno es par y el otro impar
+    function compararNumeros() {
+        var numero1 = parseInt(document.getElementById("numero1").value)
+        var numero2 = parseInt(document.getElementById("numero2").value)
+        var resultado = ""
+        if (numero1 % 2 === 0 && numero2 % 2 !== 0) {
+            resultado = (numero1 > numero2) ? "El número mayor es: " + numero1 : "El número mayor es: " + numero2
+        } else {
+            resultado = "Uno o ambos números no cumplen las condiciones."
+        }
+        document.getElementById("resultado7").innerText = resultado
+    }
+     // Ejercicio 8: Verificar si un carácter está entre a y z o es un signo de puntuación
+     function verificarCaracter() {
+        var caracter = document.getElementById("caracter").value.toLowerCase()
+        var resultado = ""
+        if (/^[a-z]$/.test(caracter)) {
+            resultado = "El carácter está entre a y z."
+        } else if (/^[,.:;]$/.test(caracter)) {
+            resultado = "El carácter es un signo de puntuación."
+        } else {
+            resultado =  "El carácter no está entre a y z ni es un signo de puntuación."
+        }
+        document.getElementById("resultado8").innerText = resultado
+    }
+    // Ejercicio 9: Calcular costo de colas con descuento
+    function calcularCostoColas() {
+        var cantidadColas = parseInt(document.getElementById("cantidadColas").value)
+        var costoPorCola = (cantidadColas < 12) ? 0.25 : 0.225
+        var costoTotal = cantidadColas * costoPorCola
+        document.getElementById("resultado9").innerText = "Costo total: $" + costoTotal.toFixed(2)
+    }
+
+    // Ejercicio 10: Calcular descuentos y pago de trajes con promoción
+    function calcularDescuentos() {
+        var precioTraje = parseFloat(prompt("Ingrese el precio del traje:"))
+        var descuento = (precioTraje > 200) ? precioTraje * 0.1 : 10
+        var precioConDescuento = precioTraje - descuento
+        var iva = precioConDescuento * 0.15
+        var totalPagar = precioConDescuento + iva
+        var mensaje = "Descuento: $" + descuento.toFixed(2) + "\n"
+        mensaje += "Precio con descuento: $" + precioConDescuento.toFixed(2) + "\n"
+        mensaje += "IVA: $" + iva.toFixed(2) + "\n"
+        mensaje += "Total a pagar: $" + totalPagar.toFixed(2)
+        alert(mensaje)
+    }
+
+    // Ejercicio 11: Presentar nombre de un día dado su número
+    function obtenerNombreDia() {
+        var numeroDia = parseInt(document.getElementById("numeroDia").value)
+        var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+        var nombreDia = (numeroDia >= 1 && numeroDia <= 7) ? diasSemana[numeroDia - 1] : "Número de día inválido"
+        document.getElementById("resultado11").innerText = "Nombre del día: " + nombreDia
+    }
+
+    // Ejercicio 12: Presentar nombre de un mes dado su número
+    function obtenerNombreMes() {
+        var numeroMes = parseInt(document.getElementById("numeroMes").value)
+        var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        var nombreMes = (numeroMes >= 1 && numeroMes <= 12) ? meses[numeroMes - 1] : "Número de mes inválido"
+        document.getElementById("resultado12").innerText = "Nombre del mes: " + nombreMes
+    }
+     // Ejercicio 13: Presentar nombres de un arreglo de atrás hacia adelante
+     function presentarNombresReversa() {
+        var nombres = ["Juan", "María", "Carlos", "Luis", "Ana"]
+        var resultado = ""
+        for (var i = nombres.length - 1; i >= 0; i--) {
+            resultado += nombres[i] + "<br>"
+        }
+        document.getElementById("resultado13").innerHTML = resultado
+    }
+
+    // Ejercicio 14: Presentar primer, medio y último carácter de una dirección
+    function obtenerCaracteresDireccion() {
+        var direccion = document.getElementById("direccion").value
+        var primerCaracter = direccion.charAt(0)
+        var ultimoCaracter = direccion.charAt(direccion.length - 1)
+        var caracterMedio = direccion.charAt(Math.floor(direccion.length / 2));
+        document.getElementById("resultado14").innerText = "Primer carácter: " + primerCaracter + ", Medio: " + caracterMedio + ", Último: " + ultimoCaracter
+    }
+
+    // Ejercicio 15: Presentar primer valor par positivo o último impar negativo de un arreglo
+    function obtenerValorParImpar() {
+        var valores = [5, 8, 12, -3, 7]
+        var primerValorPar = null
+        var ultimoValorImpar = null
+        for (var i = 0; i < valores.length; i++) {
+            if (valores[i] % 2 === 0 && valores[i] > 0 && primerValorPar === null) {
+                primerValorPar = valores[i]
+            } else if (valores[i] % 2 !== 0 && valores[i] < 0) {
+                ultimoValorImpar = valores[i]
+            }
+        }
+        document.getElementById("resultado15").innerText = "Primer valor par positivo: " + primerValorPar + ", Último valor impar negativo: " + ultimoValorImpar
+    }
+
+    // Ejercicio 16: Presentar primer y último carácter de nombres de un arreglo
+    function obtenerPrimerUltimoCaracter() {
+        var nombres = ["Juan", "María", "Carlos"]
+        var resultado = ""
+        for (var i = 0; i < nombres.length; i++) {
+            var primerCaracter = nombres[i].charAt(0)
+            var ultimoCaracter = nombres[i].charAt(nombres[i].length - 1)
+            resultado += "Nombre: " + nombres[i] + ", Primer carácter: " + primerCaracter + ", Último carácter: " + ultimoCaracter + "<br>"
+        }
+        document.getElementById("resultado16").innerHTML = resultado
+    }
+
+    // Ejercicio 17: Presentar primer carácter si es un dígito
+    function obtenerPrimerDigito() {
+        var cadena = document.getElementById("cadenaDigito").value
+        var primerCaracter = cadena.match(/\d/)
+        var resultado = (primerCaracter !== null) ? "Primer carácter: " + primerCaracter[0] : "No se encontró ningún dígito."
+        document.getElementById("resultado17").innerText = resultado
+    }
+
+    // Ejercicio 18: Presentar último carácter si es una letra
+    function obtenerUltimaLetra() {
+        var cadena = document.getElementById("cadenaLetra").value
+        var ultimaLetra = cadena.match(/[a-zA-Z]$/)
+        var resultado = (ultimaLetra !== null) ? "Último carácter: " + ultimaLetra[0] : "No se encontró ninguna letra."
+        document.getElementById("resultado18").innerText = resultado
+    }
+
+    // Ejercicio 19: Presentar primer carácter si es una vocal
+    function obtenerPrimerVocal() {
+        var cadena = document.getElementById("cadenaVocal").value.toLowerCase()
+        var primerVocal = cadena.match(/[aeiou]/)
+        var resultado = (primerVocal !== null) ? "Primer carácter vocal: " + primerVocal[0] : "No se encontró ninguna vocal."
+        document.getElementById("resultado19").innerText = resultado
+    }
+
+    // Ejercicio 20: Presentar carácter del medio si es un signo de puntuación
+    function obtenerCaracterPuntuacion() {
+        var cadena = document.getElementById("cadenaPuntuacion").value
+        var caracterMedio = ""
+        var regex = /[;:.,]/
+        if (cadena.length % 2 !== 0 && regex.test(cadena.charAt(Math.floor(cadena.length / 2)))) {
+            caracterMedio = cadena.charAt(Math.floor(cadena.length / 2))
+        }
+        document.getElementById("resultado20").innerText = "Carácter de puntuación del medio: " + caracterMedio
+    }
+
+    // Ejercicio 21: Comparar dos caracteres
+    function compararCaracteres() {
+        var caracter1 = document.getElementById("caracter1").value
+        var caracter2 = document.getElementById("caracter2").value
+        var resultado = "";
+        if (caracter1 === caracter2) {
+            resultado = "Los caracteres son iguales."
+        } else if (caracter1 < caracter2) {
+            resultado = "El primer carácter es menor que el segundo."
+        } else {
+            resultado = "El primer carácter es mayor que el segundo."
+        }
+        document.getElementById("resultado21").innerText = resultado
+    }
+
+    // Ejercicio 22: Comparar dos nombres
+    function compararNombres() {
+        var nombre1 = document.getElementById("nombre1").value.toLowerCase()
+        var nombre2 = document.getElementById("nombre2").value.toLowerCase()
+        var resultado = "";
+        if (nombre1 === nombre2) {
+            resultado = "Los nombres son iguales."
+        } else if (nombre1 < nombre2) {
+            resultado = "El primer nombre es menor que el segundo."
+        } else {
+            resultado = "El primer nombre es mayor que el segundo."
+        }
+        document.getElementById("resultado22").innerText = resultado
+    }
+
+    // Ejercicio 23: Contar elementos de una cadena
+    function contarElementosCadena() {
+        var cadena = document.getElementById("cadenaContar").value
+        var cantidadElementos = cadena.length
+        document.getElementById("resultado23").innerText = "Cantidad de elementos: " + cantidadElementos
+    }
+
+    // Ejercicio 24: Contar elementos de un arreglo
+    function contarElementosArreglo() {
+        var arreglo = ["elemento1", "elemento2", "elemento3"]
+        var cantidadElementos = arreglo.length
+        document.getElementById("resultado24").innerText = "Cantidad de elementos: " + cantidadElementos
+    }
+    </script>
+</body>
+</html>
